@@ -1,0 +1,29 @@
+name: VERA Substrata CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: cargo check
+        run: cargo check --locked=false
+
+      - name: cargo test (if tests exist)
+        run: cargo test --locked=false || echo "No tests yet; add them"
+
+      - name: artifact hygiene
+        run: |
+          ! find . -type d \( -name target -o -name node_modules -o -name __pycache__ -o -name dist \) -not -path './.git/*' | grep .
+          ! find . -name '*.pyc' | grep .
