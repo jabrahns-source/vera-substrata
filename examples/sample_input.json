@@ -1,0 +1,44 @@
+{
+  "entity_legal_name": "Example Manufacturing Corp",
+  "ein": "12-3456789",
+  "fiscal_year_start": "2025-01-01",
+  "fiscal_year_end": "2025-12-31",
+  "organizational_boundary": "operational_control",
+  "was_collecting_data_as_of_2024_12_05": true,
+  "statement_of_non_reporting": false,
+  "activities": [
+    {
+      "scope": 1,
+      "category": "stationary_combustion",
+      "activity_value": "1250.5",
+      "activity_unit": "MMBtu",
+      "emission_factor": "0.0531",
+      "emission_factor_unit": "tCO2e/MMBtu",
+      "emission_factor_source": "EPA",
+      "gwp_set": "IPCC AR5 100-year",
+      "description": "Natural gas boilers – Plant A"
+    },
+    {
+      "scope": 1,
+      "category": "mobile_combustion",
+      "activity_value": "42000",
+      "activity_unit": "gallons",
+      "emission_factor": "0.00889",
+      "emission_factor_unit": "tCO2e/gallon",
+      "emission_factor_source": "EPA",
+      "gwp_set": "IPCC AR5 100-year",
+      "description": "Diesel fleet"
+    },
+    {
+      "scope": 2,
+      "category": "purchased_electricity",
+      "activity_value": "3.45",
+      "activity_unit": "GWh",
+      "emission_factor": "0.0004",
+      "emission_factor_unit": "tCO2e/kWh",
+      "emission_factor_source": "eGRID 2024",
+      "gwp_set": "IPCC AR5 100-year",
+      "description": "Grid electricity – all facilities"
+    }
+  ]
+}
